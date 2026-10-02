@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donde mi amor te espera desde antes del amanecer</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 50% 12%, rgba(212,175,55,.13), transparent 28%),
+        radial-gradient(circle at 20% 70%, rgba(255,215,120,.05), transparent 30%),
+        #030303;
+    color: #e8cf88;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Reflejo tipo agua */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .20;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 7px,
+            rgba(218,183,92,.025) 8px,
+            transparent 10px
+        );
+    animation: water 8s ease-in-out infinite;
+}
+
+@keyframes water {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+}
+
+/* Huellas decorativas */
+.paw {
+    position: fixed;
+    color: rgba(212,175,55,.18);
+    font-size: 22px;
+    pointer-events: none;
+    animation: float 7s ease-in-out infinite;
+}
+
+.p1 { top: 18%; left: 7%; transform: rotate(-25deg); }
+.p2 { top: 31%; right: 7%; transform: rotate(25deg); animation-delay: 1s; }
+.p3 { bottom: 25%; left: 9%; transform: rotate(-18deg); animation-delay: 2s; }
+.p4 { bottom: 12%; right: 9%; transform: rotate(20deg); animation-delay: 3s; }
+
+@keyframes float {
+    0%,100% { opacity: .12; transform: translateY(0) rotate(-20deg); }
+    50% { opacity: .30; transform: translateY(-12px) rotate(-10deg); }
+}
+
+/* Contenedor */
+.wrapper {
+    width: min(92%, 720px);
+    margin: 0 auto;
+    padding: 28px 0 55px;
+}
+
+/* Imagen superior */
+.photo-frame {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto 28px;
+    padding: 7px;
+    border: 1px solid rgba(220,184,82,.65);
+    background: rgba(255,255,255,.025);
+    box-shadow:
+        0 0 25px rgba(218,183,92,.12),
+        inset 0 0 25px rgba(218,183,92,.04);
+}
+
+.photo-frame img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    filter: brightness(.72) contrast(1.05);
+}
+
+/* Orejitas */
+.cat-symbol {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 10px;
+    color: #d9b65d;
+    text-shadow: 0 0 18px rgba(218,183,92,.45);
+}
+
+/* Título */
+.title {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(22px, 6vw, 39px);
+    line-height: 1.35;
+    letter-spacing: 1.5px;
+    color: #f0d58d;
+    text-shadow:
+        0 0 8px rgba(218,183,92,.3),
+        0 0 25px rgba(218,183,92,.12);
+    margin-bottom: 30px;
+}
+
+/* Separador */
+.whiskers {
+    text-align: center;
+    color: #a98a43;
+    font-size: 20px;
+    letter-spacing: 8px;
+    margin-bottom: 30px;
+}
+
+/* Poema */
+.poem {
+    position: relative;
+    padding: 30px 24px 34px;
+    border-left: 1px solid rgba(218,183,92,.35);
+    border-right: 1px solid rgba(218,183,92,.35);
+    background:
+        linear-gradient(
+            90deg,
+            rgba(218,183,92,.025),
+            rgba(0,0,0,.15),
+            rgba(218,183,92,.025)
+        );
+}
+
+.poem p {
+    font-size: 15.5px;
+    line-height: 2;
+    font-weight: 300;
+    letter-spacing: .25px;
+    color: #eadfbf;
+    margin-bottom: 24px;
+}
+
+.poem .nickname {
+    font-family: 'Cinzel', serif;
+    color: #e8c86d;
+    font-size: 18px;
+    letter-spacing: .8px;
+    margin-bottom: 28px;
+}
+
+.poem .highlight {
+    color: #f1d98e;
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    line-height: 1.9;
+    text-align: center;
+    margin: 30px 0;
+    text-shadow: 0 0 12px rgba(218,183,92,.16);
+}
+
+.signature {
+    text-align: center;
+    margin-top: 35px;
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #e3c46e;
+    text-shadow: 0 0 12px rgba(218,183,92,.22);
+}
+
+/* Patitas finales */
+.bottom-paws {
+    text-align: center;
+    margin-top: 38px;
+    font-size: 20px;
+    letter-spacing: 9px;
+    color: rgba(218,183,92,.5);
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+
+    .wrapper {
+        width: 91%;
+        padding-top: 20px;
+    }
+
+    .photo-frame img {
+        height: 200px;
+    }
+
+    .title {
+        font-size: 23px;
+        letter-spacing: 1px;
+    }
+
+    .poem {
+        padding: 25px 17px 28px;
+    }
+
+    .poem p {
+        font-size: 14.5px;
+        line-height: 1.95;
+    }
+
+    .poem .nickname {
+        font-size: 16px;
+    }
+
+    .poem .highlight {
+        font-size: 16px;
+    }
+
+    .signature {
+        font-size: 13px;
+        letter-spacing: 1.5px;
+    }
+
+    .paw {
+        font-size: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Huellas flotantes -->
+<div class="paw p1">🐾</div>
+<div class="paw p2">🐾</div>
+<div class="paw p3">🐾</div>
+<div class="paw p4">🐾</div>
+
+<main class="wrapper">
+
+    <!-- Imagen superior -->
+    <div class="photo-frame">
+        <img src="gatito.jpg" alt="Un recuerdo especial">
+    </div>
+
+    <div class="cat-symbol">🐈‍⬛</div>
+
+    <h1 class="title">
+        ✦ DONDE MI AMOR TE ESPERA DESDE ANTES DEL AMANECER ✦
+    </h1>
+
+    <div class="whiskers">
+        ── ♡ ──
+    </div>
+
+    <article class="poem">
+
+        <p class="nickname">
+            Mi Lucerito de los Suspiros,
+        </p>
+
+        <p>
+            Desde muy temprano dejé mi amor aquí,<br>
+            guardadito entre estas palabras,<br>
+            esperando el instante en que tus ojos<br>
+            decidieran encontrarlas.
+        </p>
+
+        <p>
+            No importa si llegas al despertar,<br>
+            si me encuentras cuando el día ya avanza<br>
+            o cuando el mundo comienza a quedarse en silencio;<br>
+            yo quería que supieras que, desde temprano,<br>
+            ya había un pedacito de mi corazón<br>
+            esperándote solamente a ti.
+        </p>
+
+        <p>
+            Porque amarte no tiene horario,<br>
+            ni necesita un momento perfecto.<br>
+            Me basta saber que existes<br>
+            para que mi corazón vuelva a escogerte<br>
+            con una fuerza que no sé explicar.
+        </p>
+
+        <p>
+            Y si hoy pudiera acercarme a ti<br>
+            sin decir absolutamente nada,<br>
+            solo te abrazaría fuerte,<br>
+            besaría tu frente<br>
+            y dejaría que mi corazón te dijera bajito:
+        </p>
+
+        <p class="highlight">
+            te amo,<br>
+            te deseo en todos mis mañanas,<br>
+            te elijo en todos mis días<br>
+            y quiero seguir siendo<br>
+            ese amor que siempre encuentra<br>
+            la manera de llegar hasta ti.
+        </p>
+
+        <div class="signature">
+            VALERIA PETRO VILLAZÓN
+        </div>
+
+    </article>
+
+    <div class="bottom-paws">
+        🐾　♡　🐾
+    </div>
+
+</main>
+
+</body>
+  </html>
